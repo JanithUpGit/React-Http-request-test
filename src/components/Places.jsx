@@ -1,5 +1,5 @@
 export default function Places({ title, places, fallbackText, onSelectPlace, isLoading, loadingText }) {
-  console.log(places);
+  console.log("Places");
   return (
     <section className="places-category">
       <h2>{title}</h2>
@@ -10,6 +10,7 @@ export default function Places({ title, places, fallbackText, onSelectPlace, isL
           <ul className="places">
             {places.map((place) => (
               <li key={place.id} className="place-item">
+                {console.log(place.id)}
                 <button onClick={() => onSelectPlace(place)}>
                   <img src={`http://localhost:3000/${place.image.src}`} alt={place.image.alt} />
                   <h3>{place.title}</h3>
